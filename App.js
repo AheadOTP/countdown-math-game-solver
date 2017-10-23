@@ -1,11 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, Platform } from 'react-native';
 import Solver from './src/Solver';
 
 export default class App extends React.Component {
   render() {
     return (
-      <Solver />
+      <View style={styles.container} >
+        <Solver />
+      </View>
     );
   }
 }
@@ -13,8 +15,8 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#686868',
     alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: Platform.OS === 'android' ? 24 : 0
   },
 });
